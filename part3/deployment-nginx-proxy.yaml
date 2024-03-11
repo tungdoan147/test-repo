@@ -43,7 +43,7 @@ data:
         server {
             listen 80;
 
-            location /app1/ {
+            location /web1/ {
                 proxy_pass http://app1:80/;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
@@ -51,7 +51,7 @@ data:
                 proxy_set_header X-Forwarded-Proto $scheme;
             }
 
-            location /app2/ {
+            location /web2/ {
                 proxy_pass http://app2:80/;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
