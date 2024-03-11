@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web2-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web2-deployment
+  template:
+    metadata:
+      labels:
+        app: web2-deployment
+    spec:
+      containers:
+      - name: web2-deployment
+        image: 312199/web-nginx-2
+        ports:
+        - containerPort: 80
